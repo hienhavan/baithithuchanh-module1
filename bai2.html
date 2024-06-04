@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai2</title>
+</head>
+<body>
+<script>
+    function countUpperCase(str) {
+        var upperCount = 0;
+        for (var i = 0; i < str.length; i++) {
+            var char = str.charAt(i);
+            if (char >= 'A' && char <= 'Z') {
+                upperCount++;
+            }
+        }
+        if (upperCount > 0) {
+            return upperCount;
+        } else {
+            return "The String is not contain upper char";
+        }
+    }
+
+    var inputString = "CODEgym";
+    var result = countUpperCase(inputString);
+    document.write(result);
+
+</script>
+</body>
+</html>

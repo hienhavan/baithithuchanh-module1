@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai4</title>
+    <link rel="stylesheet" href="css.css">
+</head>
+<body>
+<script>
+    class dienthoai {
+        constructor(madienthoai, ten, hangsanxuat, gia) {
+            this._madienthoai = madienthoai;
+            this._ten = ten;
+            this._hangsanxuat = hangsanxuat;
+            this._gia = gia;
+        }
+
+        get madienthoai() {
+            return this._madienthoai;
+        }
+
+        set madienthoai(value) {
+            this._madienthoai = value;
+        }
+
+        get ten() {
+            return this._ten;
+        }
+
+        set ten(value) {
+            this._ten = value;
+        }
+
+        get hangsanxuat() {
+            return this._hangsanxuat;
+        }
+
+        set hangsanxuat(value) {
+            this._hangsanxuat = value;
+        }
+
+        get gia() {
+            return this._gia;
+        }
+
+        set gia(value) {
+            this._gia = value;
+        }
+        toString() {
+            return "ma: " + this._madienthoai + ", ten: " + this._ten + ", hangsx: " + this._hangsanxuat + ", gia: " + this._gia;
+        }
+    }
+    class PhoneManager {
+        constructor() {
+            this._dienthoais = [];
+        }
+
+        addPhone(dienthoai) {
+            this._dienthoais.push(dienthoai);
+        }
+
+        showSortedPhones() {
+            this._dienthoais.sort((a, b) => a.ten.localeCompare(b.ten));
+            this._dienthoais.forEach(dt => document.write(dt.toString()+'<br>'));
+        }
+    }
+
+    let manager = new PhoneManager();
+
+    manager.addPhone(new dienthoai("001", "nokia", "xiaomi", 50))
+    manager.addPhone(new dienthoai("002", "Galaxy", "Samsung", 900));
+    manager.addPhone(new dienthoai("003", "Pixel", "Google", 800));
+    manager.showSortedPhones();
+
+
+</script>
+</body>
+</html>

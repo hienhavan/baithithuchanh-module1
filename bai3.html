@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai3</title>
+</head>
+<body>
+<script>
+    function isPrime(num) {
+        if (num <= 1) {
+            return false;
+        }
+        for (var i = 2; i <= Math.sqrt(num); i++) {
+            if (num % i === 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    function findPrimes(arr) {
+        var primeArray = [];
+        for (var i = 0; i < arr.length; i++) {
+            if (isPrime(arr[i])) {
+                primeArray.push(arr[i]);
+            }
+        }
+        return primeArray.sort((a, b) => a - b);
+    }
+
+    var inputArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    var primeNumbers = findPrimes(inputArray);
+    document.write(primeNumbers);
+
+</script>
+</body>
+</html>
